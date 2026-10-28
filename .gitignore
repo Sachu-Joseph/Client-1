@@ -1,0 +1,7 @@
+anvil-backend/node_modules/
+anvil-backend/data/
+anvil-backend/.env
+*.db
+*.db-shm
+*.db-wal
+*.zip

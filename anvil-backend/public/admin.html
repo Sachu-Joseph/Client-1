@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Anvil Strength Club · Enquiries</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+  <section id="loginView" class="login" hidden>
+    <form id="loginForm" class="login-card">
+      <h1>Anvil Strength Club</h1>
+      <p class="muted">Admin login</p>
+      <label for="password">Password</label>
+      <input id="password" type="password" autocomplete="current-password" required>
+      <button class="btn primary" type="submit">Log in</button>
+      <p id="loginError" class="error" role="alert"></p>
+    </form>
+  </section>
+
+  <div id="appView" hidden>
+    <header class="topbar">
+      <div class="topbar-inner">
+        <h1>Free-trial enquiries</h1>
+        <div class="top-actions">
+          <a class="btn" href="/api/admin/export.csv">Export CSV</a>
+          <button class="btn" id="logoutBtn" type="button">Log out</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="page">
+      <div class="toolbar">
+        <div id="filters" class="filters" role="group" aria-label="Filter by status"></div>
+        <label class="search">
+          <span class="sr">Search by name or phone</span>
+          <input id="search" type="search" placeholder="Search name or phone">
+        </label>
+      </div>
+
+      <p id="status" class="muted" role="status" aria-live="polite"></p>
+
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Received</th>
+              <th scope="col">Name</th>
+              <th scope="col">Phone</th>
+              <th scope="col">Goal</th>
+              <th scope="col">Batch</th>
+              <th scope="col">Status</th>
+              <th scope="col">Notes</th>
+              <th scope="col"><span class="sr">Actions</span></th>
+            </tr>
+          </thead>
+          <tbody id="rows"></tbody>
+        </table>
+      </div>
+      <p id="empty" class="empty" hidden>No enquiries match this view yet.</p>
+    </main>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>
