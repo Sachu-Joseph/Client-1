@@ -313,7 +313,7 @@ app.use('/admin', (req, res, next) => {
 }, express.static(path.join(__dirname, 'public'), { index: 'admin.html', redirect: true }));
 
 app.get('/health', (req, res) => res.json({ ok: true }));
-app.get('/', (req, res) => res.redirect('/admin/'));
+app.get('/', (req, res) => res.sendFile(path.join(__dirname, '..', 'anvil-strength-club.html')));
 
 // JSON error responses
 app.use('/api', (req, res) => res.status(404).json({ error: 'Not found.' }));
